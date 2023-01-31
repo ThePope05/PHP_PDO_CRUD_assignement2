@@ -13,7 +13,7 @@
 <body>
     <fieldset>
         <legend><h1>Make your own pizza</h1></legend>
-        <form action="" method="post">
+        <form action="phpFiles/test.php" method="post">
 
             <!--SIZE DROPDOWN INPUTS-->
             <h3>Choose your size</h3>
@@ -55,16 +55,16 @@
             <!--SPICES CHECKBOX INPUTS-->
             <div>
                 <h3>Choose your spices</h3>
-                <input type="checkbox" name="spices" id="parsley" value="parsley">
+                <input type="checkbox" name="spice1" id="parsley" value="parsley">
                 <label for="parsley">Parsley</label>
 
-                <input type="checkbox" name="spices" id="oregano" value="oregano">
+                <input type="checkbox" name="spice2" id="oregano" value="oregano">
                 <label for="oregano">Oregano</label>
 
-                <input type="checkbox" name="spices" id="chiliFlakes" value="chiliFlakes">
+                <input type="checkbox" name="spice3" id="chiliFlakes" value="chiliFlakes">
                 <label for="chiliFlakes">Chilie flakes</label>
 
-                <input type="checkbox" name="spices" id="blackPeper" value="blackPeper">
+                <input type="checkbox" name="spice4" id="blackPeper" value="blackPeper">
                 <label for="blackPeper">Black peper</label>
             </div>
 
