@@ -11,11 +11,7 @@ function retInfo(){
         echo $e->getMessage();
     }
 
-    if($customQuerry != null){
-        $sql = $customQuerry;
-    }else{
-        $sql = "SELECT * FROM pizzas";
-    }
+    $sql = "SELECT * FROM pizzas";
 
     $statement = $pdo->prepare($sql);
 

@@ -19,11 +19,11 @@
             <h3>Choose your size</h3>
             <select name="size">
                 <option value="">Make your choise</option>
-                <option value="20">20</option>
-                <option value="25">25</option>
-                <option value="30">30</option>
-                <option value="35">35</option>
-                <option value="40">40</option>
+                <option value="20">20cm</option>
+                <option value="25">25cm</option>
+                <option value="30">30cm</option>
+                <option value="35">35cm</option>
+                <option value="40">40cm</option>
             </select>
 
             <!--SAUCE DROPDOWN INPUTS-->
@@ -75,7 +75,30 @@
         <legend>
             <h1>Others pizzas</h1>
         </legend>
-        <table></table>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Size</th>
+                <th>Sauce</th>
+                <th>Topping</th>
+                <th>Spices</th>
+            </tr>
+            <?php
+                include("phpFiles/read.php");
+
+                $allPizzas = retInfo();
+
+                foreach($allPizzas as $pizza){
+                    echo "<tr>";
+                        echo "<td>$pizza->id</td>";
+                        echo "<td>$pizza->size</td>";
+                        echo "<td>$pizza->sauce</td>";
+                        echo "<td>$pizza->topping</td>";
+                        echo "<td>$pizza->spices</td>";
+                    echo "</tr>";
+                }
+            ?>
+        </table>
     </fieldset>
 </body>
 </html>
