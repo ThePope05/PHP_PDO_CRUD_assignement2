@@ -44,7 +44,7 @@
                 <input type="radio" name="topping" id="vegan" value="vegan">
                 <label for="vegan">Vegan</label>
                 
-                <input type="radio" name="topping" id="vegie" value="vegie">
+                <input type="radio" name="topping" id="vegie" value="vegetables">
                 <label for="vegie">Vegetable</label>
 
                 <input type="radio" name="topping" id="meat" value="meat">
@@ -70,6 +70,12 @@
 
             <button type="submit">Submit</button>
         </form>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h1>Others pizzas</h1>
+        </legend>
+        <table></table>
     </fieldset>
 </body>
 </html>
