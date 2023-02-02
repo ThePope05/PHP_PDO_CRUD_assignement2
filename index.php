@@ -7,18 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <fieldset>
         <legend><h1>Make your own pizza</h1></legend>
-        <form action="phpFiles/test.php" method="post">
+        <form action="phpFiles/create.php" method="post">
 
             <!--SIZE DROPDOWN INPUTS-->
             <h3>Choose your size</h3>
             <select name="size">
-                <option value="">Make your choise</option>
+                <option value="">Make your choice</option>
                 <option value="20">20cm</option>
                 <option value="25">25cm</option>
                 <option value="30">30cm</option>
@@ -29,7 +30,7 @@
             <!--SAUCE DROPDOWN INPUTS-->
             <h3>Choose your sauce</h3>
             <select name="sauce">
-                <option value="">Make your choise</option>
+                <option value="">Make your choice</option>
                 <option value="tomatoSauce">Tomato sauce</option>
                 <option value="extraTomatoSauce">Extra tomato sauce</option>
                 <option value="spicyTomatoSauce">Spicy tomato sauce</option>
@@ -82,6 +83,8 @@
                 <th>Sauce</th>
                 <th>Topping</th>
                 <th>Spices</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             <?php
                 include("phpFiles/read.php");
@@ -95,6 +98,8 @@
                         echo "<td>$pizza->sauce</td>";
                         echo "<td>$pizza->topping</td>";
                         echo "<td>$pizza->spices</td>";
+                        echo "<td><a><span class='material-symbols-outlined'>edit</span></a></td>";
+                        echo "<td><a><span class='material-symbols-outlined'>delete</span></a></td>";
                     echo "</tr>";
                 }
             ?>

@@ -29,4 +29,17 @@ $statement->bindValue(":size", $_POST["size"]);
 $statement->bindValue(":sauce", $_POST["sauce"]);
 $statement->bindValue(":toppings", $_POST["topping"]);
 
-$allSpices = "";
+$usedSpices = "";
+$allSpices = ["parsley", "oregano", "chiliFlakes", "blackPeper"];
+
+$i = 0;
+foreach($_POST as $item){
+    if(in_array($item, $allSpices)){
+        $i++;
+        $usedSpices = $usedSpices . $item . ", ";
+    }
+}
+
+$statement->bindValue(":spices", $usedSpices);
+
+$statement->execute();
