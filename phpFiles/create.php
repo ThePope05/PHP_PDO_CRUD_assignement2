@@ -36,10 +36,19 @@ $i = 0;
 foreach($_POST as $item){
     if(in_array($item, $allSpices)){
         $i++;
-        $usedSpices = $usedSpices . $item . ", ";
+        $usedSpices = $usedSpices . $item . " ";
     }
 }
 
 $statement->bindValue(":spices", $usedSpices);
 
 $statement->execute();
+
+if($statement){
+    echo "Record is toegevoegd";
+    header('Refresh:3; url=../index.php');
+}
+else{
+    echo "Record is niet toegevoegd";
+    header('Refresh:3; url=../index.php');
+}

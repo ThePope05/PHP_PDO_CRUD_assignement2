@@ -99,7 +99,7 @@
                         echo "<td>$pizza->topping</td>";
                         echo "<td>$pizza->spices</td>";
                         echo "<td><a><span class='material-symbols-outlined'>edit</span></a></td>";
-                        echo "<td><a><span class='material-symbols-outlined'>delete</span></a></td>";
+                        echo "<td><a href='phpFiles/delete.php?id=$pizza->id'><span class='material-symbols-outlined'>delete</span></a></td>";
                     echo "</tr>";
                 }
             ?>
