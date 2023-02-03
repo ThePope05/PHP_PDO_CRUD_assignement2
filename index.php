@@ -38,13 +38,13 @@
                         echo "<td>$pizza->sauce</td>";
                         echo "<td>$pizza->topping</td>";
                         echo "<td>$pizza->spices</td>";
-                        echo "<td><a href='createEditForm.php?id=$pizza->id'><span class='material-symbols-outlined'>edit</span></a></td>";
+                        echo "<td><a href='editForm.php?id=$pizza->id'><span class='material-symbols-outlined'>edit</span></a></td>";
                         echo "<td><a href='phpFiles/delete.php?id=$pizza->id'><span class='material-symbols-outlined'>delete</span></a></td>";
                     echo "</tr>";
                 }
             ?>
             <tr>
-                <td><a href="createEditForm.php"><span class='material-symbols-outlined'>add_circle</span></a></td>
+                <td><a href="createForm.php"><span class='material-symbols-outlined'>add_circle</span></a></td>
             </tr>
         </table>
     </fieldset>

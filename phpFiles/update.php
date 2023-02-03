@@ -4,30 +4,27 @@ include("config.php");
 
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 
+var_dump($_POST);
+
 try {
     $pdo = new PDO($dsn, $dbUser, $dbPass);
 } catch(PDOException $e){
     echo $e->getMessage();
 }
 
-$sql = "INSERT INTO pizzas 
-                (`id`,
-                `size`,
-                `sauce`,
-                `topping`,
-                `spices`) 
-VALUES 
-                (NULL,
-                :size,
-                :sauce, 
-                :toppings,
-                :spices);";
+$sql = "UPDATE pizzas SET 
+    size = :size,
+    sauce = :sauce,
+    topping = :topping,
+    spices = :spices
+    WHERE id = :id";
 
 $statement = $pdo->prepare($sql);
 
 $statement->bindValue(":size", $_POST["size"]);
 $statement->bindValue(":sauce", $_POST["sauce"]);
-$statement->bindValue(":toppings", $_POST["topping"]);
+$statement->bindValue(":topping", $_POST["topping"]);
+$statement->bindValue(':id', $_POST['id']);
 
 $usedSpices = "";
 $allSpices = ["parsley", "oregano", "chiliFlakes", "blackPeper"];
@@ -44,10 +41,10 @@ $statement->bindValue(":spices", $usedSpices);
 $statement->execute();
 
 if($statement){
-    echo "Record is toegevoegd";
+    echo "Record is veranderd";
     header('Refresh:3; url=../index.php');
 }
 else{
-    echo "Record is niet toegevoegd";
+    echo "Record is niet veranderd";
     header('Refresh:3; url=../index.php');
 }
