@@ -12,23 +12,21 @@ body{
 }
 
 body > fieldset{
-    width: 30%;
+    width: 70%;
     height: 60vh;
     background-color: white;
     border-radius: 1rem;
     box-shadow: .5rem .5rem 0 rgba(101, 101, 101, 0.505);
 }
-body > fieldset:last-of-type{
-    width: 50%;
-}
-
-body > fieldset:last-of-type{
+body > fieldset.scroll{
     overflow-y: scroll;
 }
 
 form{
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 h1{
@@ -45,6 +43,7 @@ h1{
 table{
     width: 100%;
 }
+
 tr{width: 100%;}
 th, td{
     margin: 0;
@@ -54,6 +53,12 @@ th, td{
     border-color: rgb(146, 146, 146);
 }
 
+a{
+    color: rgb(95, 124, 203);
+}
+a:hover{
+    color: rgb(180, 86, 86);
+}
 
 h3{
     margin: .5rem 0;
